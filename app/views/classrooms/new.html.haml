@@ -1,0 +1,7 @@
+= form_for [@teacher, @teacher.classrooms.build] do |f|
+  = f.label "Name"
+  = f.text_field :name
+
+  = f.hidden_field :teacher_id, :value => current_teacher.id
+
+  = f.submit 'Create Class', class: 'btn btn-default'
