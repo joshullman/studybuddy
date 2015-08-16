@@ -1,7 +1,7 @@
 class Feedback < ActiveRecord::Base
 	validates :content, presence: true
 
-	belongs_to :user_one, class_name: "User"
-	belongs_to :user_two, class_name: "User"
+	belongs_to :sender, class_name: "Student"
+	belongs_to :receiver, class_name: "Student"
 	belongs_to :assignment
 end
