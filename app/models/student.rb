@@ -1,5 +1,5 @@
 class Student < ActiveRecord::Base
-	validates :name, :email, :password, presence: true
+	validates :name, :email, :password_digest, presence: true
   validates :email, uniqueness: true
 
 	has_many :classroom_students
