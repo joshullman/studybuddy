@@ -12,7 +12,10 @@ class StudentsController < ApplicationController
 
     if @student.save
       session[:user_id] = @student.id
-      redirect_to student_index_path
+      session[:student] = true
+      session[:teacher] = false
+
+      redirect_to students_path
     else
       render 'new'
     end
@@ -25,6 +28,6 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:username, :password)
+    params.require(:student).permit(:name, :email, :password_digest)
   end
 end
