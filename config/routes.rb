@@ -11,9 +11,10 @@ Rails.application.routes.draw do
 
   get 'students/signup' => 'students#new'
   resources :students
-  resources :classroom_students
 
   get 'students/:id/class_assignments/:id', :to => 'students#class_assignments'
+
+  resources :classroom_students
 
   get 'signin' => 'sessions#new'
   post 'signin' => 'sessions#create'

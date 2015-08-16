@@ -23,3 +23,8 @@ $(window).scroll(function() {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
     }
 });
+
+$(document).on('page:change', function(){
+  // showStudentsAssignments.init();
+})
+
