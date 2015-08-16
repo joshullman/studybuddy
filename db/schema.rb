@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20150815215215) do
   enable_extension "plpgsql"
 
   create_table "assignments", force: :cascade do |t|
-    t.string   "name"
     t.integer  "classroom_id"
+    t.string   "name"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -31,16 +31,16 @@ ActiveRecord::Schema.define(version: 20150815215215) do
   end
 
   create_table "classrooms", force: :cascade do |t|
-    t.string   "name"
     t.integer  "teacher_id"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "feedbacks", force: :cascade do |t|
     t.integer  "assignment_id"
-    t.string   "sender"
-    t.string   "receiver"
+    t.integer  "sender_id"
+    t.integer  "receiver_id"
     t.text     "content"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -62,14 +62,16 @@ ActiveRecord::Schema.define(version: 20150815215215) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.string   "username"
+    t.string   "name"
+    t.string   "email"
     t.string   "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "teachers", force: :cascade do |t|
-    t.string   "username"
+    t.string   "name"
+    t.string   "email"
     t.string   "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

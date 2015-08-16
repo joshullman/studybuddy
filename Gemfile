@@ -8,6 +8,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 # Use ActiveModel has_secure_password
+gem 'faker'
 gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
@@ -18,10 +19,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'haml'
 gem 'bootstrap-sass'
-
-
-
-
 
 group :development, :test do
   gem 'byebug'
