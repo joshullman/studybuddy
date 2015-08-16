@@ -24,7 +24,7 @@ end
 
 puts "Teachers: #{Teacher.all.length}"
 
-45.times do
+15.times do
   i = (1 + rand(15))
   3.times do
     Classroom.create(
@@ -76,8 +76,8 @@ end
 
 puts "Assignments: #{Assignment.all.length}"
 
-assignment = 1
-375.times do
+1875.times do
+  assignment = (1 + rand(125))
   classroom = Assignment.find(assignment).classroom
   students = classroom.students
   student_one = Student.first
@@ -86,48 +86,43 @@ assignment = 1
     student_one = students.sample
     student_two = students.sample
   end
+  flip = (1 + rand(2))
+  if flip == 1
     PairAssignment.create(
       assignment_id: Assignment.find(assignment).id,
       student_one_id: student_one.id,
       student_two_id: student_two.id,
-      content: "#{Faker::Hacker.say_something_smart}",
+      completed: true,
+      content: "#{Faker::Lorem.sentence}"
       )
+  else
     PairAssignment.create(
       assignment_id: Assignment.find(assignment).id,
-      student_one_id: student_two.id,
-      student_two_id: student_one.id,
-      content: "#{Faker::Hacker.say_something_smart}",
+      student_one_id: student_one.id,
+      student_two_id: student_two.id,
+      completed: false,
+      content: nil
       )
+  end
+
   assignment += 1
 end
 
 puts "PairAssignments: #{PairAssignment.all.length}"
 
-1875.times do
-  a = (1 + rand(PairAssignment.all.length/2))
-  Question.create(
-    assignment_id: a,
-    content: "#{Faker::Lorem.sentence}?",
-    answer: "#{Faker::Hacker.say_something_smart}"
-    )
-end
-
-puts "Questions: #{Question.all.length}"
-
-
 student_ass = 1
 375.times do
-  ass = Assignment.find(student_ass)
+  ass = PairAssignment.find(student_ass)
   Feedback.create(
     content: "#{Faker::Lorem.paragraph}",
-    sender_id: ass.students.first.id,
-    receiver_id: ass.students.last.id,
+    sender_id: ass.student_one_id,
+    receiver_id: ass.student_two_id,
     assignment_id: ass.id
     )
   Feedback.create(
     content: "#{Faker::Lorem.paragraph}",
-    sender_id: ass.students.last.id,
-    receiver_id: ass.students.first.id,
+    sender_id: ass.student_two_id,
+    receiver_id: ass.student_one_id,
     assignment_id: ass.id
     )
   student_ass += 1
