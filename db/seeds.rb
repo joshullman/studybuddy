@@ -1,14 +1,14 @@
 require "faker"
 
 Teacher.create(
-	name: "Teacher", 
-	email: "Teacher@teacher.com", 
+	name: "teacher", 
+	email: "teacher@teacher.com", 
 	password_digest: 'password'
 	)
 
 Student.create(
-	name: "Student", 
-	email: "Student@student.com", 
+	name: "student", 
+	email: "student@student.com", 
 	password_digest: 'password'
 	)
 

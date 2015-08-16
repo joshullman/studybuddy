@@ -1,9 +1,12 @@
 class TeachersController < ApplicationController
+  before_action :find_teachers, only: [:show, :edit, :update, :destroy]
+
   def index
     @teachers = Teacher.all
   end
 
   def show
+    @classrooms = Classroom.where(teacher_id: @teacher.id)
   end
 
   def new
@@ -27,7 +30,7 @@ class TeachersController < ApplicationController
   private
 
   def find_teachers
-    @teacher = Teacher.find(params[:id])
+    @teacher = Teacher.find(session[:user_id])
   end
 
   def teacher_params

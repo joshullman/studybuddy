@@ -1,0 +1,15 @@
+.container
+  .row
+    .col-xs-12.text-center
+      %h2= current_teacher.name
+      = link_to 'Create Class', new_teacher_classroom_path(@teacher), class: "btn btn-default"
+      /teachers/:id/classrooms/new
+      /teachers/:teacher_id/classrooms/new
+
+  - @classrooms.each_slice(4) do |classroom|
+    .row
+      - classroom.each do |classroom|
+        .col-xs-3
+          %h4= classroom.name
+
+

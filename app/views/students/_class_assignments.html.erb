@@ -1,0 +1,6 @@
+<div>
+  <h1>Assignments</h1>
+  <% student_class_assignments.each do |assignment| %>
+    <a href="/assignments/<%=assignment[0].id%>"><%=assignment[0].content%></a>
+  <% end %>
+</div>

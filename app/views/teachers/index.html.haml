@@ -2,7 +2,8 @@
   .row
     .col-xs-12.text-center
       - if current_teacher
-        %h1= current_teacher.name
+        %h1= current_teacher.id
+        %a{:href => "teachers/#{current_teacher.id}"}= current_teacher.name
         = link_to 'Sign Out!', signout_path, method: :delete, class: 'btn btn-default'
       - else
         %h1 Teacher Sign Up

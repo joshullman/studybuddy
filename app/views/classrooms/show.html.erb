@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h3><%= @classroom.name %></h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <%= form_for @classroom_student do |f| %>
+      <%= @students.each do |student| %>
+        <%= f.label "#{student.name}" %>
+        <%= f.check_box :student %>
+      <% end %>
+
+      <%= f.submit "Add Students" %>
+    <% end %>
+  </div>
+
+  <!-- Josh, this is where the button goes to add an assignment. Dont fuck it up. -->
+</div>
