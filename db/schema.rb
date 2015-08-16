@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150815215215) do
   create_table "assignments", force: :cascade do |t|
     t.integer  "classroom_id"
     t.string   "name"
+    t.text     "content"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

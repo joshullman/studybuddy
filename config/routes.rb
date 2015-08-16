@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :classrooms
   end
 
+  resources :assignments
+
   get 'students/signup' => 'students#new'
   resources :students
   resources :classroom_students

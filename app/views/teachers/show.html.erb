@@ -8,7 +8,7 @@
       <div class="row">
         <% classroom.each do |classroom| %>
           <div class="col-xs-3">
-
+            <%= link_to classroom.name, teacher_classroom_path(@teacher, Classroom.where(name: classroom.name).first.id) %>
         <% end %>
       </div>
       <% end %>

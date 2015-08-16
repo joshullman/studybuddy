@@ -1,0 +1,11 @@
+<%= form_for @assignment do |f| %>
+  <%= f.label "Assignment Name" %>
+  <%= f.text_field :name %>
+
+  <%= f.label "Questions" %>
+  <%= f.text_field :content %>
+
+  <%= f.hidden_field :classroom_id, value: params[:classroom] %>
+
+  <%= f.submit "Create Assignment", class: "btn btn-default" %>
+<% end %>

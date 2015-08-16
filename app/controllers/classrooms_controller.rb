@@ -6,6 +6,7 @@ class ClassroomsController < ApplicationController
   end
 
   def show
+    @teacher = current_teacher
     @classroom_student = ClassroomStudent.new
     @students = Student.all
   end

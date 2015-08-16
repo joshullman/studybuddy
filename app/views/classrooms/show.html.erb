@@ -6,6 +6,12 @@
   </div>
 
   <div class="row">
-
+    <% @classroom.students.each do |student| %>
+      <p><%= student.name %></p>
+    <% end %>
+    <% @classroom.assignments.each do |assignment| %>
+      <p><%= link_to assignment.name, assignment_path %></p>
+    <% end %>
+    <%= link_to "Create Assignments", new_assignment_path({:assignment => @assignment, :teacher => @teacher, :classroom => @classroom}) %>
   </div>
 </div>

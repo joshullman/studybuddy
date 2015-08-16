@@ -64,7 +64,8 @@ l = 1
 	a = (1 + rand(5))
 	Assignment.create(
 		classroom_id: a,
-		name: "#{Faker::Company.bs}"
+		name: "#{Faker::Company.bs}",
+		content: "#{Faker::Lorem.sentence}"
 		)
 end
 
