@@ -18,6 +18,10 @@ class StudentsController < ApplicationController
     end
   end
 
+  def show
+    @student = Student.find(1) #replace 1 with current_student
+    @classes = Classes.
+
   private
 
   def student_params
