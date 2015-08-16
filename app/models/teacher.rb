@@ -3,4 +3,6 @@ class Teacher < ActiveRecord::Base
 	validates :email, uniqueness: true
 
 	has_many :classrooms
+
+  has_secure_password #not encrypting password
 end

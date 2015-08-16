@@ -15,6 +15,9 @@ class TeachersController < ApplicationController
 
     if @teacher.save
       session[:user_id] = @teacher.id
+      session[:teacher] = true
+      session[:student] = false
+
       redirect_to root_url
     else
       render 'new'
@@ -28,7 +31,7 @@ class TeachersController < ApplicationController
   end
 
   def teacher_params
-    params.require(:teacher).permit(:username, :password)
+    params.require(:teacher).permit(:name, :email, :password_digest)
   end
 
 end

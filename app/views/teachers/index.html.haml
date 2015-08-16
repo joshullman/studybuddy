@@ -2,7 +2,7 @@
   .row
     .col-xs-12.text-center
       - if current_teacher
-        %h1= current_teacher.username
+        %h1= current_teacher.name
         = link_to 'Sign Out!', signout_path, method: :delete, class: 'btn btn-default'
       - else
         %h1 Teacher Sign Up
@@ -14,6 +14,6 @@
     .col-md-4.text-center
       %h2 All Teachers
       - @teachers.each do |teacher|
-        %li= teacher.username
+        %li= teacher.name
 
 
