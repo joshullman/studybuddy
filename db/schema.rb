@@ -34,8 +34,9 @@ ActiveRecord::Schema.define(version: 20150815215215) do
   create_table "classrooms", force: :cascade do |t|
     t.integer  "teacher_id"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "feedbacks", force: :cascade do |t|

@@ -1,7 +1,0 @@
-= form_for :session, url: signin_path do |f|
-  = label_tag("Email")
-  = f.text_field :email
-  = label_tag("Password")
-  = f.password_field :password_digest
-
-  = f.submit "Sign In", class: "btn btn-large"

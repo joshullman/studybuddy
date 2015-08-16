@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="form-group">
+      <%= form_for @student do |f| %>
+        <%= f.label "Name" %>
+        <%= f.text_field :name %>
+
+        <%= f.label "Email" %>
+        <%= f.text_field :email %>
+
+        <%= f.label "Password" %>
+        <%= f.password_field :password_digest %>
+
+        <%= f.submit 'Sign Up', class: 'btn btn-default' %>
+      <% end %>
+    </div>
+  </div>
+</div>

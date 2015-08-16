@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'welcome#index'
+
   get 'teachers/signup' => 'teachers#new'
   resources :teachers do
     resources :classrooms
@@ -15,5 +17,4 @@ Rails.application.routes.draw do
   post 'signin' => 'sessions#create'
   delete 'signout' => 'sessions#destroy'
 
-  root 'teachers#index'
 end

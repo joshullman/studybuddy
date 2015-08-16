@@ -1,18 +1,18 @@
 require "faker"
 
 Teacher.create(
-	name: "Teacher",
-	email: "Teacher@teacher.com",
+	name: "Bossman Supertroop",
+	email: "teacher@teacher.com",
 	password_digest: 'password'
 	)
 
 Student.create(
-	name: "Student",
-	email: "Student@student.com",
+	name: "Hunty (It's definitely his birthday today)",
+	email: "student@student.com",
 	password_digest: 'password'
 	)
 
-4.times do
+14.times do
 	name = Faker::Name.name
 	suffix = Faker::Name.suffix
 	Teacher.create(
@@ -24,18 +24,21 @@ end
 
 puts "Teachers: #{Teacher.all.length}"
 
-i = 1
-5.times do
-	Classroom.create(
-		teacher_id: i,
-		name: "#{Faker::Company.catch_phrase}"
-		)
+45.times do
+	i = (1 + rand(15))
+	3.times do
+		Classroom.create(
+			teacher_id: i,
+			name: "#{Faker::Company.catch_phrase}",
+			description: "#{Faker::Lorem.paragraph}"
+			)
+	end
 	i += 1
 end
 
 puts "Classrooms: #{Classroom.all.length}"
 
-74.times do
+224.times do
 	name = Faker::Name.name
 	suffix = Faker::Name.suffix
 	Student.create(
@@ -48,20 +51,22 @@ end
 puts "Students: #{Student.all.length}"
 
 student = 1
-75.times do
-	classroom = (1 + rand(5))
-	ClassroomStudent.create(
-		student_id: student,
-		classroom_id: classroom
-		)
+225.times do
+	3.times do
+		classroom = (1 + rand(45))
+		ClassroomStudent.create(
+			student_id: student,
+			classroom_id: classroom
+			)
+	end
 	student += 1
 end
 
 puts "ClassroomStudents: #{ClassroomStudent.all.length}"
 
 l = 1
-125.times do
-	a = (1 + rand(5))
+375.times do
+	a = (1 + rand(15))
 	Assignment.create(
 		classroom_id: a,
 		name: "#{Faker::Company.bs}",
@@ -72,7 +77,7 @@ end
 puts "Assignments: #{Assignment.all.length}"
 
 assignment = 1
-125.times do
+375.times do
 	classroom = Assignment.find(assignment).classroom
 	students = classroom.students
 	student_one = Student.first
@@ -94,7 +99,7 @@ end
 
 puts "StudentAssignments: #{StudentAssignment.all.length}"
 
-625.times do
+1875.times do
 	a = (1 + rand(StudentAssignment.all.length/2))
 	Question.create(
 		assignment_id: a,
@@ -107,7 +112,7 @@ puts "Questions: #{Question.all.length}"
 
 
 student_ass = 1
-125.times do
+375.times do
 	ass = Assignment.find(student_ass)
 	Feedback.create(
 		content: "#{Faker::Lorem.paragraph}",
