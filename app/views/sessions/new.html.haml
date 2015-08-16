@@ -1,0 +1,7 @@
+= form_for :session, url: signin_path do |f|
+  = label_tag("Username")
+  = f.text_field :username
+  = label_tag("Password")
+  = f.password_field :password
+
+  = f.submit "Sign In", class: "btn btn-large"
