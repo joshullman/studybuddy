@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :students
   resources :classroom_students
 
+  get 'students/:id/class_assignments/:id', :to => 'students#class_assignments'
+
   get 'signin' => 'sessions#new'
   post 'signin' => 'sessions#create'
   delete 'signout' => 'sessions#destroy'
