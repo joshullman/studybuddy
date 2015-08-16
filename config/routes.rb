@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
 
-  root 'teachers#index'
-
   get 'teachers/signup' => 'teachers#new'
-  resources :teachers
+  resources :teachers do
+    resources :classrooms
+  end
 
   get 'students/signup' => 'students#new'
   resources :students
-
+  resources :classroom_students
 
   get 'signin' => 'sessions#new'
   post 'signin' => 'sessions#create'
   delete 'signout' => 'sessions#destroy'
+
+  root 'teachers#index'
 end

@@ -1,0 +1,9 @@
+<%= form_for @classroom_student do |f| %>
+  <% f.collection_select :student_id, @students, :id, :name, include_blank: true %>
+    <select name="">
+      <%= @students.each do |student| %>
+        <option><%= student.name %></option>
+      <% end %>
+    </select>
+
+<% end %>
