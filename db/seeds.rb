@@ -2,7 +2,7 @@ require "faker"
 
 Teacher.create(
 	name: "teacher", 
-	email: "seacher@teacher.com", 
+	email: "teacher@teacher.com", 
 	password_digest: 'password'
 	)
 
