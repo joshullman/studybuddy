@@ -22,6 +22,8 @@ Student.create(
 		)	
 end
 
+puts "Teachers: #{Teacher.all.length}"
+
 i = 1
 5.times do
 	Classroom.create(
@@ -30,6 +32,8 @@ i = 1
 		)
 	i += 1
 end
+
+puts "Classrooms: #{Classroom.all.length}"
 
 74.times do
 	name = Faker::Name.name
@@ -41,6 +45,8 @@ end
 		)	
 end
 
+puts "Students: #{Student.all.length}"
+
 student = 1
 75.times do
 	classroom = (1 + rand(5))
@@ -51,6 +57,8 @@ student = 1
 	student += 1
 end
 
+puts "ClassroomStudents: #{ClassroomStudent.all.length}"
+
 l = 1
 125.times do
 	a = (1 + rand(5))
@@ -60,13 +68,18 @@ l = 1
 		)
 end
 
+puts "Assignments: #{Assignment.all.length}"
+
 assignment = 1
 125.times do
 	classroom = Assignment.find(assignment).classroom
 	students = classroom.students
-	student_one = students.sample
-	student_two = students.sample
-	if student_one.id != student_two.id
+	student_one = Student.first
+	student_two = Student.first
+	until student_one.id != student_two.id
+		student_one = students.sample
+		student_two = students.sample
+	end
 		StudentAssignment.create(
 			assignment_id: Assignment.find(assignment).id,
 			student_id: student_one.id
@@ -75,18 +88,22 @@ assignment = 1
 			assignment_id: Assignment.find(assignment).id,
 			student_id: student_two.id
 			)
-	end
 	assignment += 1
 end
 
+puts "StudentAssignments: #{StudentAssignment.all.length}"
+
 625.times do
-	a = (1 + rand(Assignment.all.length))
+	a = (1 + rand(StudentAssignment.all.length/2))
 	Question.create(
 		assignment_id: a,
 		content: "#{Faker::Lorem.sentence}?",
 		answer: "#{Faker::Hacker.say_something_smart}"
 		)
 end
+
+puts "Questions: #{Question.all.length}"
+
 
 student_ass = 1
 125.times do
@@ -105,3 +122,5 @@ student_ass = 1
 		)
 	student_ass += 1
 end
+
+puts "Feedbacks: #{Feedback.all.length}"
