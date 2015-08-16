@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h2><%= current_teacher.name %></h2>
+      <%= link_to 'Create Class', new_teacher_classroom_path(@teacher), class: "btn btn-default" %>
+
+      <% @classrooms.each_slice(4) do |classroom| %>
+      <div class="row">
+        <% classroom.each do |classroom| %>
+          <div class="col-xs-3">
+
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

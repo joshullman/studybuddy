@@ -20,10 +20,10 @@ class ClassroomsController < ApplicationController
     @classroom = @teacher.classrooms.new(classroom_params)
 
     if @classroom.save
-      render 'show'
+      redirect_to teacher_classroom_path(@teacher, @classroom)
     else
       @error = @classroom.errors.full_messages
-      render 'new'
+      render :new
     end
   end
 

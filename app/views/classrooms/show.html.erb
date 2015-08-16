@@ -6,13 +6,6 @@
   </div>
 
   <div class="row">
-    <%= form_for @classroom_student do |f| %>
-      <%= @students.each do |student| %>
-        <%= f.label "#{student.name}" %>
-        <%= f.check_box :student %>
-      <% end %>
 
-      <%= f.submit "Add Students" %>
-    <% end %>
   </div>
 </div>

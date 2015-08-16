@@ -1,25 +1,25 @@
 require "faker"
 
 Teacher.create(
-	name: "Teacher", 
-	email: "Teacher@teacher.com", 
-	password: 'password'
+	name: "Teacher",
+	email: "Teacher@teacher.com",
+	password_digest: 'password'
 	)
 
 Student.create(
-	name: "Student", 
-	email: "Student@student.com", 
-	password: 'password'
+	name: "Student",
+	email: "Student@student.com",
+	password_digest: 'password'
 	)
 
 4.times do
 	name = Faker::Name.name
 	suffix = Faker::Name.suffix
 	Teacher.create(
-		name: "#{Faker::Name.prefix} #{name} #{suffix}", 
-		email: "#{name}.com", 
-		password: 'password'
-		)	
+		name: "#{Faker::Name.prefix} #{name} #{suffix}",
+		email: "#{name}.com",
+		password_digest: 'password'
+		)
 end
 
 puts "Teachers: #{Teacher.all.length}"
@@ -39,10 +39,10 @@ puts "Classrooms: #{Classroom.all.length}"
 	name = Faker::Name.name
 	suffix = Faker::Name.suffix
 	Student.create(
-		name: "#{Faker::Name.prefix} #{name} #{suffix}", 
-		email: "#{name}.com", 
-		password: 'password'
-		)	
+		name: "#{Faker::Name.prefix} #{name} #{suffix}",
+		email: "#{name}.com",
+		password_digest: 'password'
+		)
 end
 
 puts "Students: #{Student.all.length}"
