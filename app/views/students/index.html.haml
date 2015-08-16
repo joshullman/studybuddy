@@ -1,0 +1,19 @@
+.container
+  .row
+    .col-xs-12.text-center
+      - if current_student
+        %h1= current_student.username
+        = link_to 'Sign Out!', signout_path, method: :delete, class: 'btn btn-default'
+      - else
+        %h1 Student Sign Up
+        = link_to 'Sign Up!', students_signup_path, class: 'btn btn-default'
+        %h1 Student Sign In
+        = link_to 'Sign In!', signin_path, class: 'btn btn-default'
+
+  .row
+    .col-md-4.text-center
+      %h2 All Students
+      - @students.each do |student|
+        %li= student.username
+
+

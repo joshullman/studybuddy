@@ -1,6 +1,9 @@
-class TeacherController < ApplicationController
+class TeachersController < ApplicationController
   def index
+    @teachers = Teacher.all
+  end
 
+  def show
   end
 
   def new
@@ -12,13 +15,17 @@ class TeacherController < ApplicationController
 
     if @teacher.save
       session[:user_id] = @teacher.id
-      # redirect_to root_url
+      redirect_to root_url
     else
       render 'new'
     end
   end
 
   private
+
+  def find_teachers
+    @teacher = Teacher.find(params[:id])
+  end
 
   def teacher_params
     params.require(:teacher).permit(:username, :password)

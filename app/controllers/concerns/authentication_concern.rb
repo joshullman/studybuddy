@@ -7,11 +7,11 @@ module AuthenticationConcern
   end
 
   def current_teacher
-    @current_teacher ||= Teacher.find(session[:user_id]) if session[:user_id]
+    @current_teacher ||= Teacher.find(session[:user_id]) if session[:user_id] && session[:teacher]
   end
 
   def current_student
-    @current_student ||= Student.find(session[:user_id]) if session[:user_id]
+    @current_student ||= Student.find(session[:user_id]) if session[:user_id] && session[:student]
   end
 
 end

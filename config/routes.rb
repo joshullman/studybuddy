@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resources :teachers, except: [:new]
+
+  root 'teachers#index'
+
   get 'teachers/signup' => 'teachers#new'
+  resources :teachers
+
   get 'students/signup' => 'students#new'
+  resources :students
+
 
   get 'signin' => 'sessions#new'
   post 'signin' => 'sessions#create'

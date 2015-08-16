@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   def index
-
+    @students = Student.all
   end
 
   def new
@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
 
     if @student.save
       session[:user_id] = @student.id
-      # redirect_to root_url
+      redirect_to student_index_path
     else
       render 'new'
     end
