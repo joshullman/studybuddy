@@ -11,5 +11,9 @@ class Student < ActiveRecord::Base
 	has_many :sent_feedbacks, class_name: "Feedback", source: :sender, foreign_key: "sender_id"
   has_many :received_feedbacks, class_name: "Feedback", source: :receiver, foreign_key: "receiver_id"
 
+  def pair_assignments
+  	PairAssignment.where("pair_assignments.student_one_id = #{self.id} OR pair_assignments.student_two_id = #{self.id}")
+  end
+
   has_secure_password #not encrypting password
 end
