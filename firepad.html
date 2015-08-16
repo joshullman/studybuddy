@@ -1,0 +1,42 @@
+
+<!-- See http://www.firepad.io/docs/ for detailed embedding docs. -->
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <!-- Firebase -->
+  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+
+  <!-- CodeMirror -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/codemirror.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/codemirror.css" />
+
+  <!-- Firepad -->
+  <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.1.0/firepad.css" />
+  <script src="https://cdn.firebase.com/libs/firepad/1.1.0/firepad.min.js"></script>
+
+  <!-- Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- Firepad JS -->
+  <script src="app/assets/javascripts/firepad.js"></script>
+  <script src="app/assets/javascripts/firepad-userlist.js"></script>
+  <style>
+    html { height: 100%; }
+    body { margin: 0; height: 100%; }
+    /* Height / width / positioning can be customized for your use case.
+       For demo purposes, we make the user list 175px and firepad fill the rest of the page. */
+    #userlist {
+      position: absolute; left: 0; top: 0; bottom: 0; height: auto;
+      width: 175px;
+    }
+    #firepad {
+      position: absolute; left: 175px; top: 0; bottom: 0; right: 0; height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="userlist"></div>
+  <div id="firepad"></div>
+</body>
+</html>
