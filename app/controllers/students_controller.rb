@@ -30,18 +30,17 @@ class StudentsController < ApplicationController
   def class_assignments
     @student = current_student
     class_assignments = Assignment.where(classroom_id: params[:id])
+    @student_class_assignments = []
     class_assignments.each do |assignment|
-      @student_class_assignments = PairAssignment.where(student_one_id: current_student.id, assignment_id: assignment.id) || []
+      @student_class_assignments << PairAssignment.where(student_one_id: current_student.id, assignment_id: assignment.id)
       @student_class_assignments << PairAssignment.where(student_two_id: current_student.id, assignment_id: assignment.id)
     end
-    p "*" * 80
-    puts "ASsssssssssjjjjjj"
-    # p @student_class_assignments
-    @student_class_assignments.each do |assignment|
-      p assignment[0]
-      p assignment[0].id
-    end
-    p "*" * 80
+
+    p "*" * 20
+    p @student_class_assignments
+    p "*" * 20
+
+
     respond_to do |format|
       format.html {render partial: 'class_assignments', locals: {student_class_assignments: @student_class_assignments}}
       # format.json {render json: @student_class_assignments}

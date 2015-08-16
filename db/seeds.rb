@@ -129,3 +129,34 @@ student_ass = 1
 end
 
 puts "Feedbacks: #{Feedback.all.length}"
+
+
+
+Student.create(
+  name: "Tanay Arora",
+  email: "tarora@g.clemson.edu",
+  password_digest: 'tasty'
+  )
+
+Classroom.create( teacher_id: 1, name: "Introduction To Women's Studies", description: "#{Faker::Lorem.paragraph}")
+Classroom.create( teacher_id: 1, name: "Computer Science 101", description: "#{Faker::Lorem.paragraph}")
+Classroom.create( teacher_id: 1, name: "Advanced DBC", description: "#{Faker::Lorem.paragraph}")
+
+
+ClassroomStudent.create( student_id: 226, classroom_id: 46 )
+ClassroomStudent.create( student_id: 226, classroom_id: 47 )
+ClassroomStudent.create( student_id: 226, classroom_id: 48 )
+
+Assignment.create(classroom_id: 46, name: "speak to joan of arc in person", content: "#{Faker::Lorem.sentence}")
+Assignment.create(classroom_id: 46, name: "get joan of arc's number", content: "#{Faker::Lorem.sentence}")
+Assignment.create(classroom_id: 47, name: "win hackathon", content: "#{Faker::Lorem.sentence}")
+Assignment.create(classroom_id: 48, name: "EE with sad pizza", content: "#{Faker::Lorem.sentence}")
+Assignment.create(classroom_id: 48, name: "game night dance party", content: "#{Faker::Lorem.sentence}")
+
+PairAssignment.create( assignment_id: 376, student_one_id: 226, student_two_id: 1, completed: false, content: nil )
+PairAssignment.create( assignment_id: 377, student_one_id: 226, student_two_id: 2, completed: false, content: nil )
+PairAssignment.create( assignment_id: 378, student_one_id: 226, student_two_id: 3, completed: false, content: nil )
+PairAssignment.create( assignment_id: 379, student_one_id: 226, student_two_id: 4, completed: false, content: nil )
+PairAssignment.create( assignment_id: 380, student_one_id: 226, student_two_id: 1, completed: false, content: nil )
+
+
