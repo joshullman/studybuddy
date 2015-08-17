@@ -1,8 +1,18 @@
-<div>
+<div class="row text-center center-block">
+  <br>
   <h1>Assignments</h1>
   <% student_class_assignments.each do |assignment| %>
-    <% if assignment %>
-      <p><a href="/assignments/<%= Assignment.find(assignment.assignment_id).id %>"><%= Assignment.find(assignment.assignment_id).name %></a></p>
-    <% end %>
+    <div class="col-xs-3">
+      <div class="assignment-block">
+        <% if assignment %>
+            <%= link_to(assignment_path(assignment.assignment_id)) do %>
+              <h4><%= Assignment.find(assignment.assignment_id).name.capitalize %></h4>
+            <% end %>
+        <% end %>
+      </div>
+      <br>
+    </div>
   <% end %>
 </div>
+
+
