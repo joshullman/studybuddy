@@ -8,9 +8,6 @@ class AssignmentsController < ApplicationController
   end
 
   def new
-    p "*" * 100
-    puts params
-    p "*" * 100
     @assignment = Assignment.new
   end
 

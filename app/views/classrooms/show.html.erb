@@ -1,19 +1,44 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      <h3><%= @classroom.name %></h3>
+<div id="classroom">
+  <div class="text-hero">
+    <div class="container">
+      <div class="row">
+        <h2><%= @classroom.name %></h2>
+      </div>
     </div>
   </div>
-
-  <div class="row">
-    <% @classroom.students.each do |student| %>
-      <p><%= student.name %></p>
-    <% end %>
-    <% @classroom.assignments.each do |assignment| %>
-      <p><%= link_to assignment.name, assignment_path %></p>
-    <% end %>
-    <%= link_to "Create Assignments", new_assignment_path({:assignment => @assignment, :teacher => @teacher, :classroom => @classroom}) %>
-  </div>
-
-  <!-- Josh, this is where the button goes to add an assignment. Dont fuck it up. -->
 </div>
+
+<section>
+  <div class="container">
+    <div class="row text-center center-block">
+      <h2>Students</h2>
+      <% @classroom.students.each do |student| %>
+        <div class="col-xs-3">
+          <div class="student-block">
+            <!-- image placeholder -->
+          </div>
+          <br>
+          <p><%= student.name %></p>
+          <br>
+        </div>
+      <% end %>
+    </div>
+    <div class="row text-center center-block">
+      <h2>Assignments</h2>
+      <br><br>
+      <% @classroom.assignments.each do |assignment| %>
+        <div class="col-xs-3">
+          <div class="assignment-block">
+            <%= link_to(assignment_path(assignment.id)) do %>
+              <h4><%= assignment.name.capitalize %></h4>
+            <% end %>
+          </div>
+          <br>
+        </div>
+      <% end %>
+    </div>
+    <div class="row text-center">
+      <%= link_to "Create Assignments", new_assignment_path({:assignment => @assignment, :teacher => @teacher, :classroom => @classroom}), class: "btn btn-class" %>
+    </div>
+  </div>
+</section>

@@ -19,13 +19,12 @@
                           </li>
                         <% if current_student %>
                           <li><a href="/profiles/<%= current_student.id %>">Hello, <%= current_student.name %></a></li>
-                          <li><a href="/signout">Logout</a></li>
+                          <li><a href="/signout" data-method="delete">Logout</a></li>
                         <% elsif current_teacher %>
-                          <li><a href="/profiles/<%= current_teacher.id %>">Hello, <%= current_teacher.name %></a></li>
-                          <li><a href="/signout">Logout</a></li>
+                          <li><a href="/teachers/<%= current_teacher.id %>">Hello, <%= current_teacher.name %></a></li>
+                          <li><a href="/signout" data-method="delete">Logout</a></li>
                         <% else %>
                           <li class="signin"><a href="/signin">Sign In</a></li>
-                          <li class="signup"><a href="/signup">Sign Up</a></li>
                         <% end %>
                      </ul>
                  </div>

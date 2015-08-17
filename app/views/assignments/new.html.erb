@@ -1,11 +1,24 @@
-<%= form_for @assignment do |f| %>
-  <%= f.label "Assignment Name" %>
-  <%= f.text_field :name %>
+<div class="container">
+  <div class="row">
+    <h1>Create New Assignment</h1>
+    <br>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <div class="form-group">
+        <%= form_for @assignment do |f| %>
+          <%= f.label "Name" %>
+          <%= f.text_field :name, class: "form-control" %>
 
-  <%= f.label "Questions" %>
-  <%= f.text_field :content %>
+          <%= f.label "Questions" %>
+          <%= f.text_field :content, class: "form-control" %>
 
-  <%= f.hidden_field :classroom_id, value: params[:classroom] %>
+          <%= f.hidden_field :classroom_id, value: params[:classroom] %>
 
-  <%= f.submit "Create Assignment", class: "btn btn-default" %>
-<% end %>
+          <br>
+          <%= f.submit "Create Assignment", class: "btn btn-default" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

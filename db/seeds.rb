@@ -24,8 +24,8 @@ end
 
 puts "Teachers: #{Teacher.all.length}"
 
+i = 1
 15.times do
-  i = (1 + rand(15))
   3.times do
     Classroom.create(
       teacher_id: i,
@@ -66,11 +66,11 @@ puts "ClassroomStudents: #{ClassroomStudent.all.length}"
 
 l = 1
 375.times do
-  a = (1 + rand(15))
+  a = (1 + rand(45))
   Assignment.create(
     classroom_id: a,
     name: "#{Faker::Company.bs}",
-    content: "#{Faker::Lorem.sentence}"
+    content: "#{Faker::Lorem.paragraph}"
     )
 end
 

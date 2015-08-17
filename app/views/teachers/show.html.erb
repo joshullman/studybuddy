@@ -1,19 +1,50 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 text-center">
-      <h2><%= current_teacher.name %></h2>
-      <%= link_to 'Create Class', new_teacher_classroom_path(@teacher), class: "btn btn-default" %>
-
-      <% @classrooms.each_slice(4) do |classroom| %>
-      <div class="row">
-        <% classroom.each do |classroom| %>
-          <div class="col-xs-3">
-            <%= link_to classroom.name, teacher_classroom_path(@teacher, Classroom.where(name: classroom.name).first.id) %>
-        <% end %>
-      </div>
+    <div class="col-xs-12">
+      <% if current_teacher %>
+        <h1>Welcome <%= current_teacher.name %></h1>
+      <% else %>
+        <h1>Welcome Teachers</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
       <% end %>
     </div>
   </div>
-</div>
+  <% if current_teacher %>
+    <% current_teacher.classrooms.each_slice(3) do |name| %>
+      <div class="row">
+        <br><br>
+        <% name.each do |classname| %>
+          <div class="col-xs-4">
+            <div class="class-block">
+              <h2><%= classname.name %></h2>
+              <p><%= classname.description %></p>
+              <a href="/teachers/<%= current_teacher.id %>/classrooms/<%= classname.id %>" class="btn btn-class text-right">View Class</a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="row text-center">
+      <div class="col-xs-6">
+        <div class="Teacher Sign In">
+          <%= link_to 'Sign In', signin_path, class: "btn btn-class" %>
+        </div>
+      </div>
 
+      <div class="col-xs-6">
+        <div class="Teacher Sign Up">
+          <%= link_to 'Sign Up', teachers_signup_path, class: "btn btn-class" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 

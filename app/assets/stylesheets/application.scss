@@ -21,7 +21,7 @@ section {
 }
 
 #page-wrap {
-  margin-top: 100px;
+  margin-top: 90px;
 }
 
 #student {
@@ -44,11 +44,61 @@ section {
   background-position-y: -350px;
 }
 
+#classroom {
+  background: url('https://drscdn.500px.org/photo/69277209/m%3D2048/d58309fae3c4179fa351baae9a3cea87');
+  background-size: cover;
+}
+
 .text-hero {
   padding: 150px 0px;
   background-color: rgba(0,0,0,0.3);
   h2 {
     color: #FFF;
+    text-transform: uppercase;
   }
 }
 
+.class-block {
+  padding: 40px;
+  background-color: $coral;
+  color: #FFF;
+  h2 {
+    height: 66px;
+  }
+  p {
+    height: 100px;
+  }
+}
+
+.btn-class {
+  background-color: $plaster;
+  color: #000;
+  border-radius: 0px;
+  padding: 10px;
+}
+
+.student-block {
+  margin: 0px auto;
+  width: 150px;
+  height: 150px;
+  background-color: $plaster;
+  color: #000;
+  border-radius: 50%;
+}
+
+.assignment-block {
+  margin: 0px auto;
+  padding: 20px;
+  background-color: rgba(47,73,110, 0.8);
+  border-radius: 15px;
+  h4 {
+    color: #FFF;
+    height: 40px;
+  }
+}
+
+#assignment {
+  background: url('http://www.androidguys.com/wp-content/uploads/2013/03/notebook_wallpaper_by_luccaspaivasilva-d4ilz0b.jpg');
+  background-size: cover;
+  background-position-y: -360px;
+}

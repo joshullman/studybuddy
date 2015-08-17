@@ -21,7 +21,7 @@ class TeachersController < ApplicationController
       session[:teacher] = true
       session[:student] = false
 
-      redirect_to root_url
+      redirect_to teacher_path(@teacher)
     else
       render 'new'
     end
