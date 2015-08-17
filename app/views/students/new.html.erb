@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <h1>Student Sign Up</h1>
+    <br>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <div class="form-group">
+        <%= form_for @student do |f| %>
+          <%= f.label "Name" %>
+          <%= f.text_field :name, class: "form-control" %>
+
+          <%= f.label "Email" %>
+          <%= f.text_field :email, class: "form-control" %>
+
+          <%= f.label "Password" %>
+          <%= f.password_field :password_digest, class: "form-control" %>
+          <br>
+          <%= f.submit 'Sign Up', class: 'btn btn-default' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

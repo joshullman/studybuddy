@@ -1,0 +1,47 @@
+<div id="classroom">
+  <div class="text-hero">
+    <div class="container">
+      <div class="row">
+        <h2><%= @classroom.name %></h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="row text-center center-block">
+      <h2>Students</h2>
+      <% @classroom.students.each do |student| %>
+        <div class="col-xs-3">
+          <div class="student-block">
+            <!-- image placeholder -->
+          </div>
+          <br>
+          <%= link_to(student_path(student.id)) do %>
+            <p><%= student.name %></p>
+          <% end %>
+
+          <br>
+        </div>
+      <% end %>
+    </div>
+    <div class="row text-center center-block">
+      <h2>Assignments</h2>
+      <br><br>
+      <% @classroom.assignments.each do |assignment| %>
+        <div class="col-xs-3">
+          <div class="assignment-block">
+            <%= link_to(assignment_path(assignment.id)) do %>
+              <h4><%= assignment.name.capitalize %></h4>
+            <% end %>
+          </div>
+          <br>
+        </div>
+      <% end %>
+    </div>
+    <div class="row text-center">
+      <%= link_to "Create Assignments", new_assignment_path({:assignment => @assignment, :teacher => @teacher, :classroom => @classroom}), class: "btn btn-class" %>
+    </div>
+  </div>
+</section>

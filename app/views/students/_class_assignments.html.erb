@@ -1,0 +1,8 @@
+<div>
+  <h1>Assignments</h1>
+  <% student_class_assignments.each do |assignment| %>
+    <% if assignment %>
+      <p><a href="/assignments/<%= Assignment.find(assignment.assignment_id).id %>"><%= Assignment.find(assignment.assignment_id).name %></a></p>
+    <% end %>
+  <% end %>
+</div>

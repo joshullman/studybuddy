@@ -1,0 +1,22 @@
+<div id="assignment">
+  <div class="text-hero">
+    <div class="container">
+      <div class="row">
+        <h2><%= @assignment.name %></h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="row text-center">
+      <h3>Instructions & Questions</h3>
+      <%= instant_hangout hangout_type: 'moderated', lang: :en %>
+      <br>
+      <div class="col-sm-4 col-sm-offset-4">
+        <%= @assignment.content %>
+      </div>
+    </div>
+  </div>
+</section>

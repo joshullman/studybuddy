@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Studybuddy</title>
+  <title>Study Buddy</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
 
+<%= render 'welcome/navbar' %>
+<div id="page-wrap">
+  <%= yield %>
+</div>
 </body>
 </html>

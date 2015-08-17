@@ -1,0 +1,104 @@
+@import url(http://fonts.googleapis.com/css?family=Pathway+Gothic+One);
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+$blue: #2988BC;
+$sea: #2F496E;
+$plaster: #F4EADE;
+$coral: #ED8C72;
+
+@import "navbar";
+
+h1,h2,h3,h4 {
+  font-family: 'Pathway Gothic One', sans-serif;
+  text-align: center;
+}
+
+section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+#page-wrap {
+  margin-top: 90px;
+}
+
+#student {
+  background: url('https://www.plt.org/stuff/contentmgr/files/1/0446e78188b26886b73c8914023b936f/files/istock_000006326911large.jpg');
+  background-size: cover;
+  background-position-y: -350px;
+  // &:hover {
+  //   background-size: 120%;
+  //   transition: background-size 2s ease-in;
+  //   -moz-transition: background-size 2s ease-in;
+  //   -ms-transition: background-size 2s ease-in;
+  //   -o-transition: background-size 2s ease-in;
+  //   -webkit-transition: background-size 2s ease-in;
+  // }
+}
+
+#teacher {
+  background: url('http://i.huffpost.com/gen/1573459/images/o-SAD-TEACHER-facebook.jpg');
+  background-size: cover;
+  background-position-y: -350px;
+}
+
+#classroom {
+  background: url('https://drscdn.500px.org/photo/69277209/m%3D2048/d58309fae3c4179fa351baae9a3cea87');
+  background-size: cover;
+}
+
+.text-hero {
+  padding: 150px 0px;
+  background-color: rgba(0,0,0,0.3);
+  h2 {
+    color: #FFF;
+    text-transform: uppercase;
+  }
+}
+
+.class-block {
+  padding: 40px;
+  background-color: $coral;
+  color: #FFF;
+  h2 {
+    height: 66px;
+  }
+  p {
+    height: 100px;
+  }
+}
+
+.btn-class {
+  background-color: $plaster;
+  color: #000;
+  border-radius: 0px;
+  padding: 10px;
+}
+
+.student-block {
+  margin: 0px auto;
+  width: 150px;
+  height: 150px;
+  background-color: $plaster;
+  color: #000;
+  border-radius: 50%;
+}
+
+.assignment-block {
+  margin: 0px auto;
+  padding: 20px;
+  background-color: rgba(47,73,110, 0.8);
+  border-radius: 15px;
+  h4 {
+    color: #FFF;
+    height: 40px;
+  }
+}
+
+#assignment {
+  background: url('http://www.androidguys.com/wp-content/uploads/2013/03/notebook_wallpaper_by_luccaspaivasilva-d4ilz0b.jpg');
+  background-size: cover;
+  background-position-y: -360px;
+}
