@@ -22,9 +22,13 @@ class StudentsController < ApplicationController
   end
 
   def show
-    p "*" * 80
-    @classes = current_student.classrooms
-    p "*" * 80
+    if current_student
+      @student = current_student
+      @classes = current_student.classrooms
+    else
+      @student = Student.find(params[:id])
+      @classes = @student.classrooms
+    end
   end
 
   def class_assignments

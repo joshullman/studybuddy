@@ -18,7 +18,10 @@
             <!-- image placeholder -->
           </div>
           <br>
-          <p><%= student.name %></p>
+          <%= link_to(student_path(student.id)) do %>
+            <p><%= student.name %></p>
+          <% end %>
+
           <br>
         </div>
       <% end %>
