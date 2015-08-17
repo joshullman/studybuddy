@@ -5,6 +5,9 @@ class AssignmentsController < ApplicationController
   end
 
   def show
+    p "*" * 100
+    p params
+    p "*" * 100
   end
 
   def new

@@ -4,6 +4,7 @@ class CreatePairAssignments < ActiveRecord::Migration
       t.integer  :student_one_id
       t.integer  :student_two_id
       t.integer  :assignment_id
+      t.integer  :classroom_id
       t.text     :content
       t.boolean  :completed, default: false
 

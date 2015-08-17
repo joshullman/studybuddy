@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150815215151) do
     t.integer  "student_one_id"
     t.integer  "student_two_id"
     t.integer  "assignment_id"
+    t.integer  "classroom_id"
     t.text     "content"
     t.boolean  "completed",      default: false
     t.datetime "created_at",                     null: false
