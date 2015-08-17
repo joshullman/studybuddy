@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require google-instant-hangouts
 
 $(window).scroll(function() {
     if ($(".navbar").offset().top > 50) {

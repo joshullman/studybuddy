@@ -27,6 +27,7 @@ $(document).on('page:change',function(){
     request.done(function(response){
       console.log("THIS IS THE RESPONSE");
       console.log(response);
+      $('.class_assignments').empty();
       $('.class_assignments').append(response);
       // $('.class_assignments').append("<%= render partial: 'students/class_assignments', locals: {student_class_assignments:" +  response + "} %>");
 

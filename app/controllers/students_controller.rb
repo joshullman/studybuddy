@@ -29,12 +29,13 @@ class StudentsController < ApplicationController
 
   def class_assignments
     @student = current_student
-    class_assignments = Assignment.where(classroom_id: params[:id])
-    @student_class_assignments = []
-    class_assignments.each do |assignment|
-      @student_class_assignments << PairAssignment.where(student_one_id: current_student.id, assignment_id: assignment.id)
-      @student_class_assignments << PairAssignment.where(student_two_id: current_student.id, assignment_id: assignment.id)
-    end
+    # class_assignments = Assignment.where(classroom_id: params[:id])
+    @student_class_assignments = @student.pair_assignments.where(classroom_id: params[:id])
+
+    # class_assignments.each do |assignment|
+    #   @student_class_assignments << PairAssignment.where(student_one_id: current_student.id, assignment_id: assignment.id)
+    #   @student_class_assignments << PairAssignment.where(student_two_id: current_student.id, assignment_id: assignment.id)
+    # end
 
     p "*" * 20
     p @student_class_assignments

@@ -1,5 +1,7 @@
 <div class="container">
   <div class="row">
+    <%= @assignment.name %>
+    <%= instant_hangout hangout_type: 'moderated', lang: :en %>
     <%= @assignment.content %>
   </div>
 </div>

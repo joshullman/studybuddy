@@ -10,6 +10,7 @@ gem 'turbolinks'
 # Use ActiveModel has_secure_password
 gem 'faker'
 gem 'bcrypt', '~> 3.1.7'
+gem "google-instant-hangouts"
 
 # Use Unicorn as the app server
 # gem 'unicorn'
