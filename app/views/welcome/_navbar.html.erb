@@ -18,7 +18,7 @@
                              <a href="#page-top"></a>
                           </li>
                         <% if current_student %>
-                          <li><a href="/profiles/<%= current_student.id %>">Hello, <%= current_student.name %></a></li>
+                          <li><a href="/students/<%= current_student.id %>">Hello, <%= current_student.name %></a></li>
                           <li><a href="/signout" data-method="delete">Logout</a></li>
                         <% elsif current_teacher %>
                           <li><a href="/teachers/<%= current_teacher.id %>">Hello, <%= current_teacher.name %></a></li>
